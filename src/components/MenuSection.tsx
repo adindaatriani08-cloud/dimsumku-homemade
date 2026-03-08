@@ -1,0 +1,53 @@
+import dimsumAyam from "@/assets/dimsum-ayam.jpg";
+import dimsumUdang from "@/assets/dimsum-udang.jpg";
+import dimsumJamur from "@/assets/dimsum-jamur.jpg";
+import dimsumKeju from "@/assets/dimsum-keju.jpg";
+import dimsumMixbox from "@/assets/dimsum-mixbox.jpg";
+
+const menuItems = [
+  { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy." },
+  { img: dimsumUdang, name: "Dimsum Udang", desc: "Paduan udang segar dengan kulit tipis yang kenyal sempurna." },
+  { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial." },
+  { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa." },
+  { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial." },
+];
+
+const MenuSection = () => {
+  return (
+    <section id="menu" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-primary font-body font-semibold text-sm uppercase tracking-widest mb-3">Menu Kami</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+            Pilihan Dimsum <span className="text-primary">Terfavorit</span>
+          </h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {menuItems.map((item, i) => (
+            <div
+              key={item.name}
+              className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all animate-fade-up"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-xl font-bold text-foreground mb-2">{item.name}</h3>
+                <p className="text-muted-foreground font-body text-sm">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MenuSection;
