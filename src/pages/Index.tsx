@@ -7,11 +7,13 @@ import TestimoniSection from "@/components/TestimoniSection";
 import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import DownloadPdfButton from "@/components/DownloadPdfButton";
 
 const Index = () => {
   return (
     <>
       <Navbar />
+      <DownloadPdfButton />
       <HeroSection />
       <AboutSection />
       <MenuSection />
