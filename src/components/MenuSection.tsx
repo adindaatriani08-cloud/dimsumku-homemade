@@ -5,11 +5,11 @@ import dimsumKeju from "@/assets/dimsum-keju.jpg";
 import dimsumMixbox from "@/assets/dimsum-mixbox.jpg";
 
 const menuItems = [
-  { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy." },
-  { img: dimsumUdang, name: "Dimsum Udang", desc: "Paduan udang segar dengan kulit tipis yang kenyal sempurna." },
-  { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial." },
-  { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa." },
-  { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial." },
+  { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000" },
+  { img: dimsumUdang, name: "Dimsum Udang", desc: "Paduan udang segar dengan kulit tipis yang kenyal sempurna.", price: "Rp 18.000" },
+  { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial.", price: "Rp 14.000" },
+  { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa.", price: "Rp 16.000" },
+  { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial.", price: "Rp 45.000" },
 ];
 
 const MenuSection = () => {
