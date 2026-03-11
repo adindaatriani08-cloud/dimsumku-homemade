@@ -1,3 +1,5 @@
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 import dimsumAyam from "@/assets/dimsum-ayam.jpg";
 import dimsumUdang from "@/assets/dimsum-udang.jpg";
 import dimsumJamur from "@/assets/dimsum-jamur.jpg";
@@ -5,14 +7,16 @@ import dimsumKeju from "@/assets/dimsum-keju.jpg";
 import dimsumMixbox from "@/assets/dimsum-mixbox.jpg";
 
 const menuItems = [
-  { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000" },
-  { img: dimsumUdang, name: "Dimsum Udang", desc: "Paduan udang segar dengan kulit tipis yang kenyal sempurna.", price: "Rp 18.000" },
-  { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial.", price: "Rp 14.000" },
-  { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa.", price: "Rp 16.000" },
-  { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial.", price: "Rp 45.000" },
+  { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000", priceNum: 15000 },
+  { img: dimsumUdang, name: "Dimsum Udang", desc: "Paduan udang segar dengan kulit tipis yang kenyal sempurna.", price: "Rp 18.000", priceNum: 18000 },
+  { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial.", price: "Rp 14.000", priceNum: 14000 },
+  { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa.", price: "Rp 16.000", priceNum: 16000 },
+  { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial.", price: "Rp 45.000", priceNum: 45000 },
 ];
 
 const MenuSection = () => {
+  const { addItem } = useCart();
+
   return (
     <section id="menu" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -41,7 +45,16 @@ const MenuSection = () => {
               <div className="p-6">
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">{item.name}</h3>
                 <p className="text-muted-foreground font-body text-sm mb-3">{item.desc}</p>
-                <p className="font-display text-lg font-bold text-primary">{item.price}</p>
+                <div className="flex items-center justify-between">
+                  <p className="font-display text-lg font-bold text-primary">{item.price}</p>
+                  <button
+                    onClick={() => addItem({ name: item.name, price: item.price, priceNum: item.priceNum, img: item.img })}
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-primary text-primary-foreground font-body text-xs font-semibold hover:opacity-90 transition-opacity"
+                  >
+                    <ShoppingCart className="w-3.5 h-3.5" />
+                    Tambah
+                  </button>
+                </div>
               </div>
             </div>
           ))}
