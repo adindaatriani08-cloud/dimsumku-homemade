@@ -1,7 +1,7 @@
 import { Phone, Instagram, MapPin } from "lucide-react";
 
 const contacts = [
-  { icon: Phone, label: "WhatsApp", value: "0812-3456-7890", href: "https://wa.me/6281234567890" },
+  { icon: Phone, label: "WhatsApp", value: "08998003723", href: "https://wa.me/628998003723" },
   { icon: Instagram, label: "Instagram", value: "@dimsumku", href: "https://instagram.com/dimsumku" },
   { icon: MapPin, label: "Lokasi", value: "Jakarta, Indonesia", href: "#" },
 ];
