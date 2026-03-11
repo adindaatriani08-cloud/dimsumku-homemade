@@ -40,7 +40,8 @@ const MenuSection = () => {
               </div>
               <div className="p-6">
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">{item.name}</h3>
-                <p className="text-muted-foreground font-body text-sm">{item.desc}</p>
+                <p className="text-muted-foreground font-body text-sm mb-3">{item.desc}</p>
+                <p className="font-display text-lg font-bold text-primary">{item.price}</p>
               </div>
             </div>
           ))}
