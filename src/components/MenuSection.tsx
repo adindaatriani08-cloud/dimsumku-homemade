@@ -5,6 +5,9 @@ import dimsumUdang from "@/assets/dimsum-udang.jpg";
 import dimsumJamur from "@/assets/dimsum-jamur.jpg";
 import dimsumKeju from "@/assets/dimsum-keju.jpg";
 import dimsumMixbox from "@/assets/dimsum-mixbox.jpg";
+import dimsumMentaiOriginal from "@/assets/dimsum-mentai-original.jpg";
+import dimsumMentaiPedas from "@/assets/dimsum-mentai-pedas.jpg";
+import dimsumMentaiKeju from "@/assets/dimsum-mentai-keju.jpg";
 
 const menuItems = [
   { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000", priceNum: 15000 },
@@ -12,6 +15,9 @@ const menuItems = [
   { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial.", price: "Rp 14.000", priceNum: 14000 },
   { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa.", price: "Rp 16.000", priceNum: 16000 },
   { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial.", price: "Rp 45.000", priceNum: 45000 },
+  { img: dimsumMentaiOriginal, name: "Dimsum Mentai Original", desc: "Dimsum dengan topping saus mentai creamy yang gurih dan lumer.", price: "Rp 20.000", priceNum: 20000 },
+  { img: dimsumMentaiPedas, name: "Dimsum Mentai Pedas", desc: "Sensasi pedas saus mentai dengan taburan chili flakes yang menggoda.", price: "Rp 20.000", priceNum: 20000 },
+  { img: dimsumMentaiKeju, name: "Dimsum Mentai Keju", desc: "Perpaduan saus mentai dan keju lumer yang bikin nagih.", price: "Rp 22.000", priceNum: 22000 },
 ];
 
 const MenuSection = () => {
