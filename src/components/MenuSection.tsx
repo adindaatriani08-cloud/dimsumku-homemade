@@ -11,6 +11,10 @@ import dimsumMentaiKeju from "@/assets/dimsum-mentai-keju.jpg";
 import gyoza from "@/assets/gyoza.jpg";
 import lumpiaUdang from "@/assets/lumpia-udang.jpg";
 import dimsumSosis from "@/assets/dimsum-sosis.jpg";
+import esTehManis from "@/assets/es-teh-manis.jpg";
+import esJeruk from "@/assets/es-jeruk.jpg";
+import thaiTea from "@/assets/thai-tea.jpg";
+import lemonTea from "@/assets/lemon-tea.jpg";
 
 const menuItems = [
   { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000", priceNum: 15000 },
@@ -24,6 +28,10 @@ const menuItems = [
   { img: gyoza, name: "Gyoza", desc: "Gyoza crispy dengan isian daging dan sayuran, disajikan dengan saus spesial.", price: "Rp 18.000", priceNum: 18000 },
   { img: lumpiaUdang, name: "Lumpia Udang", desc: "Lumpia renyah berisi udang segar yang gurih dan lezat.", price: "Rp 17.000", priceNum: 17000 },
   { img: dimsumSosis, name: "Dimsum Sosis", desc: "Dimsum lembut dengan isian sosis juicy yang disukai semua kalangan.", price: "Rp 15.000", priceNum: 15000 },
+  { img: esTehManis, name: "Es Teh Manis", desc: "Teh manis dingin klasik yang segar, teman sempurna untuk dimsum.", price: "Rp 5.000", priceNum: 5000 },
+  { img: esJeruk, name: "Es Jeruk", desc: "Jus jeruk segar dengan es batu, kaya vitamin dan menyegarkan.", price: "Rp 7.000", priceNum: 7000 },
+  { img: thaiTea, name: "Thai Tea", desc: "Teh Thailand creamy dengan susu yang manis dan harum.", price: "Rp 10.000", priceNum: 10000 },
+  { img: lemonTea, name: "Lemon Tea", desc: "Teh lemon segar dengan irisan lemon asli, cocok untuk menemani makanan.", price: "Rp 8.000", priceNum: 8000 },
 ];
 
 const MenuSection = () => {
