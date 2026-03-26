@@ -8,6 +8,9 @@ import dimsumMixbox from "@/assets/dimsum-mixbox.jpg";
 import dimsumMentaiOriginal from "@/assets/dimsum-mentai-original.jpg";
 import dimsumMentaiPedas from "@/assets/dimsum-mentai-pedas.jpg";
 import dimsumMentaiKeju from "@/assets/dimsum-mentai-keju.jpg";
+import gyoza from "@/assets/gyoza.jpg";
+import lumpiaUdang from "@/assets/lumpia-udang.jpg";
+import dimsumSosis from "@/assets/dimsum-sosis.jpg";
 
 const menuItems = [
   { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000", priceNum: 15000 },
