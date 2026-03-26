@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { Minus, Plus, Trash2, ShoppingCart, MessageCircle } from "lucide-react";
 
-const WA_NUMBER = "6281234567890";
+const WA_NUMBER = "6285711152590";
 
 const CartDrawer = () => {
   const { items, updateQty, removeItem, clearCart, totalItems, totalPrice, isOpen, setIsOpen } = useCart();
