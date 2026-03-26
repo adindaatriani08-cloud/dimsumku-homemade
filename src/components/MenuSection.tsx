@@ -21,6 +21,9 @@ const menuItems = [
   { img: dimsumMentaiOriginal, name: "Dimsum Mentai Original", desc: "Dimsum dengan topping saus mentai creamy yang gurih dan lumer.", price: "Rp 20.000", priceNum: 20000 },
   { img: dimsumMentaiPedas, name: "Dimsum Mentai Pedas", desc: "Sensasi pedas saus mentai dengan taburan chili flakes yang menggoda.", price: "Rp 20.000", priceNum: 20000 },
   { img: dimsumMentaiKeju, name: "Dimsum Mentai Keju", desc: "Perpaduan saus mentai dan keju lumer yang bikin nagih.", price: "Rp 22.000", priceNum: 22000 },
+  { img: gyoza, name: "Gyoza", desc: "Gyoza crispy dengan isian daging dan sayuran, disajikan dengan saus spesial.", price: "Rp 18.000", priceNum: 18000 },
+  { img: lumpiaUdang, name: "Lumpia Udang", desc: "Lumpia renyah berisi udang segar yang gurih dan lezat.", price: "Rp 17.000", priceNum: 17000 },
+  { img: dimsumSosis, name: "Dimsum Sosis", desc: "Dimsum lembut dengan isian sosis juicy yang disukai semua kalangan.", price: "Rp 15.000", priceNum: 15000 },
 ];
 
 const MenuSection = () => {
