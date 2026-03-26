@@ -22,7 +22,7 @@ const HeroSection = () => {
           camilan maupun makan bersama keluarga.
         </p>
         <a
-          href="https://wa.me/6281234567890"
+          href="https://wa.me/6285711152590"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex items-center px-8 py-4 rounded-full bg-primary text-primary-foreground font-body text-lg font-bold hover:scale-105 transition-transform animate-fade-up"
