@@ -70,7 +70,8 @@ const MenuSection = () => {
             </button>
           ))}
         </div>
-          {menuItems.map((item, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map((item, i) => (
             <div
               key={item.name}
               className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all animate-fade-up"
