@@ -1,4 +1,5 @@
 import { ShoppingCart } from "lucide-react";
+import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import dimsumAyam from "@/assets/dimsum-ayam.jpg";
 import dimsumUdang from "@/assets/dimsum-udang.jpg";
@@ -17,38 +18,60 @@ import thaiTea from "@/assets/thai-tea.jpg";
 import lemonTea from "@/assets/lemon-tea.jpg";
 
 const menuItems = [
-  { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000", priceNum: 15000 },
-  { img: dimsumUdang, name: "Dimsum Udang", desc: "Paduan udang segar dengan kulit tipis yang kenyal sempurna.", price: "Rp 18.000", priceNum: 18000 },
-  { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial.", price: "Rp 14.000", priceNum: 14000 },
-  { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa.", price: "Rp 16.000", priceNum: 16000 },
-  { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial.", price: "Rp 45.000", priceNum: 45000 },
-  { img: dimsumMentaiOriginal, name: "Dimsum Mentai Original", desc: "Dimsum dengan topping saus mentai creamy yang gurih dan lumer.", price: "Rp 20.000", priceNum: 20000 },
-  { img: dimsumMentaiPedas, name: "Dimsum Mentai Pedas", desc: "Sensasi pedas saus mentai dengan taburan chili flakes yang menggoda.", price: "Rp 20.000", priceNum: 20000 },
-  { img: dimsumMentaiKeju, name: "Dimsum Mentai Keju", desc: "Perpaduan saus mentai dan keju lumer yang bikin nagih.", price: "Rp 22.000", priceNum: 22000 },
-  { img: gyoza, name: "Gyoza", desc: "Gyoza crispy dengan isian daging dan sayuran, disajikan dengan saus spesial.", price: "Rp 18.000", priceNum: 18000 },
-  { img: lumpiaUdang, name: "Lumpia Udang", desc: "Lumpia renyah berisi udang segar yang gurih dan lezat.", price: "Rp 17.000", priceNum: 17000 },
-  { img: dimsumSosis, name: "Dimsum Sosis", desc: "Dimsum lembut dengan isian sosis juicy yang disukai semua kalangan.", price: "Rp 15.000", priceNum: 15000 },
-  { img: esTehManis, name: "Es Teh Manis", desc: "Teh manis dingin klasik yang segar, teman sempurna untuk dimsum.", price: "Rp 5.000", priceNum: 5000 },
-  { img: esJeruk, name: "Es Jeruk", desc: "Jus jeruk segar dengan es batu, kaya vitamin dan menyegarkan.", price: "Rp 7.000", priceNum: 7000 },
-  { img: thaiTea, name: "Thai Tea", desc: "Teh Thailand creamy dengan susu yang manis dan harum.", price: "Rp 10.000", priceNum: 10000 },
-  { img: lemonTea, name: "Lemon Tea", desc: "Teh lemon segar dengan irisan lemon asli, cocok untuk menemani makanan.", price: "Rp 8.000", priceNum: 8000 },
+  { img: dimsumAyam, name: "Dimsum Ayam", desc: "Dimsum lembut dengan isian ayam pilihan yang gurih dan juicy.", price: "Rp 15.000", priceNum: 15000, category: "Dimsum" },
+  { img: dimsumUdang, name: "Dimsum Udang", desc: "Paduan udang segar dengan kulit tipis yang kenyal sempurna.", price: "Rp 18.000", priceNum: 18000, category: "Dimsum" },
+  { img: dimsumJamur, name: "Dimsum Jamur", desc: "Isian jamur shiitake pilihan dengan bumbu spesial.", price: "Rp 14.000", priceNum: 14000, category: "Dimsum" },
+  { img: dimsumKeju, name: "Dimsum Keju", desc: "Keju lumer di setiap gigitan, favorit anak-anak dan dewasa.", price: "Rp 16.000", priceNum: 16000, category: "Dimsum" },
+  { img: dimsumMixbox, name: "Dimsum Mix Box", desc: "Paket lengkap berbagai varian dimsum dalam satu box spesial.", price: "Rp 45.000", priceNum: 45000, category: "Dimsum" },
+  { img: dimsumMentaiOriginal, name: "Dimsum Mentai Original", desc: "Dimsum dengan topping saus mentai creamy yang gurih dan lumer.", price: "Rp 20.000", priceNum: 20000, category: "Mentai" },
+  { img: dimsumMentaiPedas, name: "Dimsum Mentai Pedas", desc: "Sensasi pedas saus mentai dengan taburan chili flakes yang menggoda.", price: "Rp 20.000", priceNum: 20000, category: "Mentai" },
+  { img: dimsumMentaiKeju, name: "Dimsum Mentai Keju", desc: "Perpaduan saus mentai dan keju lumer yang bikin nagih.", price: "Rp 22.000", priceNum: 22000, category: "Mentai" },
+  { img: gyoza, name: "Gyoza", desc: "Gyoza crispy dengan isian daging dan sayuran, disajikan dengan saus spesial.", price: "Rp 18.000", priceNum: 18000, category: "Camilan" },
+  { img: lumpiaUdang, name: "Lumpia Udang", desc: "Lumpia renyah berisi udang segar yang gurih dan lezat.", price: "Rp 17.000", priceNum: 17000, category: "Camilan" },
+  { img: dimsumSosis, name: "Dimsum Sosis", desc: "Dimsum lembut dengan isian sosis juicy yang disukai semua kalangan.", price: "Rp 15.000", priceNum: 15000, category: "Camilan" },
+  { img: esTehManis, name: "Es Teh Manis", desc: "Teh manis dingin klasik yang segar, teman sempurna untuk dimsum.", price: "Rp 5.000", priceNum: 5000, category: "Minuman" },
+  { img: esJeruk, name: "Es Jeruk", desc: "Jus jeruk segar dengan es batu, kaya vitamin dan menyegarkan.", price: "Rp 7.000", priceNum: 7000, category: "Minuman" },
+  { img: thaiTea, name: "Thai Tea", desc: "Teh Thailand creamy dengan susu yang manis dan harum.", price: "Rp 10.000", priceNum: 10000, category: "Minuman" },
+  { img: lemonTea, name: "Lemon Tea", desc: "Teh lemon segar dengan irisan lemon asli, cocok untuk menemani makanan.", price: "Rp 8.000", priceNum: 8000, category: "Minuman" },
 ];
+
+const categories = ["Semua", "Dimsum", "Mentai", "Camilan", "Minuman"];
 
 const MenuSection = () => {
   const { addItem } = useCart();
+  const [activeCategory, setActiveCategory] = useState("Semua");
+
+  const filteredItems = activeCategory === "Semua"
+    ? menuItems
+    : menuItems.filter((item) => item.category === activeCategory);
 
   return (
     <section id="menu" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-primary font-body font-semibold text-sm uppercase tracking-widest mb-3">Menu Kami</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
             Pilihan Dimsum <span className="text-primary">Terfavorit</span>
           </h2>
         </div>
 
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2 rounded-full font-body text-sm font-semibold transition-all ${
+                activeCategory === cat
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menuItems.map((item, i) => (
+          {filteredItems.map((item, i) => (
             <div
               key={item.name}
               className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all animate-fade-up"
