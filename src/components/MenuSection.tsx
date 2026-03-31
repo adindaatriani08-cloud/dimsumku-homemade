@@ -35,20 +35,41 @@ const menuItems = [
   { img: lemonTea, name: "Lemon Tea", desc: "Teh lemon segar dengan irisan lemon asli, cocok untuk menemani makanan.", price: "Rp 8.000", priceNum: 8000, category: "Minuman" },
 ];
 
+const categories = ["Semua", "Dimsum", "Mentai", "Camilan", "Minuman"];
+
 const MenuSection = () => {
   const { addItem } = useCart();
+  const [activeCategory, setActiveCategory] = useState("Semua");
+
+  const filteredItems = activeCategory === "Semua"
+    ? menuItems
+    : menuItems.filter((item) => item.category === activeCategory);
 
   return (
     <section id="menu" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-primary font-body font-semibold text-sm uppercase tracking-widest mb-3">Menu Kami</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
             Pilihan Dimsum <span className="text-primary">Terfavorit</span>
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2 rounded-full font-body text-sm font-semibold transition-all ${
+                activeCategory === cat
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
           {menuItems.map((item, i) => (
             <div
               key={item.name}
