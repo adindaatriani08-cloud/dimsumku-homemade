@@ -23,6 +23,7 @@ const Index = () => {
       <MenuSection />
       <FeaturesSection />
       <TestimoniSection />
+      <PaymentSection />
       <CtaSection />
       <ContactSection />
       <Footer />
