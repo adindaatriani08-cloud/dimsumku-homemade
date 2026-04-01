@@ -5,6 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import MenuSection from "@/components/MenuSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import TestimoniSection from "@/components/TestimoniSection";
+import PaymentSection from "@/components/PaymentSection";
 import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
