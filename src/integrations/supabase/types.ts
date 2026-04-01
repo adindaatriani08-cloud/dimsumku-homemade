@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      orders: {
+        Row: {
+          created_at: string
+          customer_address: string
+          customer_name: string
+          customer_phone: string
+          id: string
+          items: Json
+          order_notes: string | null
+          order_number: string
+          order_status: Database["public"]["Enums"]["order_status"]
+          payment_method: string
+          payment_status: Database["public"]["Enums"]["payment_status"]
+          total_price: number
+          updated_at: string
+          whatsapp_sent: boolean
+        }
+        Insert: {
+          created_at?: string
+          customer_address: string
+          customer_name: string
+          customer_phone: string
+          id?: string
+          items?: Json
+          order_notes?: string | null
+          order_number?: string
+          order_status?: Database["public"]["Enums"]["order_status"]
+          payment_method?: string
+          payment_status?: Database["public"]["Enums"]["payment_status"]
+          total_price?: number
+          updated_at?: string
+          whatsapp_sent?: boolean
+        }
+        Update: {
+          created_at?: string
+          customer_address?: string
+          customer_name?: string
+          customer_phone?: string
+          id?: string
+          items?: Json
+          order_notes?: string | null
+          order_number?: string
+          order_status?: Database["public"]["Enums"]["order_status"]
+          payment_method?: string
+          payment_status?: Database["public"]["Enums"]["payment_status"]
+          total_price?: number
+          updated_at?: string
+          whatsapp_sent?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +73,13 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      order_status:
+        | "processing"
+        | "confirmed"
+        | "shipped"
+        | "delivered"
+        | "cancelled"
+      payment_status: "pending" | "paid" | "failed" | "expired"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +206,15 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      order_status: [
+        "processing",
+        "confirmed",
+        "shipped",
+        "delivered",
+        "cancelled",
+      ],
+      payment_status: ["pending", "paid", "failed", "expired"],
+    },
   },
 } as const
