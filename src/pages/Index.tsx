@@ -1,4 +1,3 @@
-import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -14,7 +13,7 @@ import CartDrawer from "@/components/CartDrawer";
 
 const Index = () => {
   return (
-    <CartProvider>
+    <>
       <Navbar />
       <DownloadPdfButton />
       <CartDrawer />
@@ -27,7 +26,7 @@ const Index = () => {
       <CtaSection />
       <ContactSection />
       <Footer />
-    </CartProvider>
+    </>
   );
 };
 
