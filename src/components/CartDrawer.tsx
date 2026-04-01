@@ -1,11 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useCart } from "@/context/CartContext";
-import { Minus, Plus, Trash2, ShoppingCart, MessageCircle, MapPin, User, CreditCard } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingCart } from "lucide-react";
 
 const WA_NUMBER = "6285711152590";
 
