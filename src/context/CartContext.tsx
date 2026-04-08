@@ -45,7 +45,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       removeItem(name);
       return;
     }
-    setItems((prev) => prev.map((i) => (i.name === name ? { ...i, qty } : i)));
+    const clampedQty = Math.min(qty, 100);
+    setItems((prev) => prev.map((i) => (i.name === name ? { ...i, qty: clampedQty } : i)));
   };
 
   const clearCart = () => setItems([]);
