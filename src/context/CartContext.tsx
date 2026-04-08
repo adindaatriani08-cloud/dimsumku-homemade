@@ -30,7 +30,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setItems((prev) => {
       const existing = prev.find((i) => i.name === item.name);
       if (existing) {
-        return prev.map((i) => (i.name === item.name ? { ...i, qty: i.qty + 1 } : i));
+        const newQty = Math.min(existing.qty + 1, 100);
+        return prev.map((i) => (i.name === item.name ? { ...i, qty: newQty } : i));
       }
       return [...prev, { ...item, qty: 1 }];
     });
@@ -45,7 +46,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       removeItem(name);
       return;
     }
-    setItems((prev) => prev.map((i) => (i.name === name ? { ...i, qty } : i)));
+    const clampedQty = Math.min(qty, 100);
+    setItems((prev) => prev.map((i) => (i.name === name ? { ...i, qty: clampedQty } : i)));
   };
 
   const clearCart = () => setItems([]);

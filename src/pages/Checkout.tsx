@@ -131,7 +131,7 @@ const Checkout = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="font-body text-sm">Nomor HP</Label>
-                  <Input id="phone" placeholder="08xxxxxxxxxx" value={phone} onChange={(e) => setPhone(e.target.value)} maxLength={15} />
+                  <Input id="phone" placeholder="08xxxxxxxxxx" value={phone} onChange={(e) => { const val = e.target.value.replace(/\D/g, ""); setPhone(val); }} maxLength={15} inputMode="numeric" pattern="[0-9]*" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="address" className="font-body text-sm">Alamat Pengiriman</Label>
