@@ -81,7 +81,6 @@ const CartDrawer = () => {
                           onChange={(e) => handleQtyInput(item.name, e.target.value)}
                           className="w-14 h-7 text-center text-sm font-semibold px-1 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        />
                         <button
                           onClick={() => updateQty(item.name, item.qty + 1)}
                           className="w-7 h-7 rounded-full bg-background border border-border flex items-center justify-center hover:bg-muted transition-colors"
