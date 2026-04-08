@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { QrCode, Building2, Wallet, Banknote, MessageCircle, ZoomIn, Copy, Check } from "lucide-react";
+import qrisImage from "@/assets/qris-dimsumku.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -48,9 +49,7 @@ const PaymentSection = () => {
                 <QrCode className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-display font-bold text-foreground">QRIS</h3>
-              <div className="w-36 h-36 bg-muted rounded-lg flex items-center justify-center border border-border">
-                <QrCode className="w-20 h-20 text-muted-foreground/40" />
-              </div>
+              <img src={qrisImage} alt="QRIS Dimsumku" className="w-36 h-44 rounded-lg border border-border object-contain" loading="lazy" width={512} height={640} />
               <p className="font-body text-xs text-muted-foreground">
                 Scan QRIS untuk pembayaran cepat
               </p>
@@ -141,9 +140,7 @@ const PaymentSection = () => {
             <DialogTitle className="font-display text-center">QRIS Dimsumku</DialogTitle>
           </DialogHeader>
           <div className="flex items-center justify-center p-6">
-            <div className="w-64 h-64 bg-muted rounded-lg flex items-center justify-center border border-border">
-              <QrCode className="w-40 h-40 text-muted-foreground/40" />
-            </div>
+            <img src={qrisImage} alt="QRIS Dimsumku" className="w-64 h-80 rounded-lg border border-border object-contain" loading="lazy" width={512} height={640} />
           </div>
           <p className="font-body text-xs text-muted-foreground text-center">
             Scan menggunakan aplikasi e-wallet atau mobile banking Anda

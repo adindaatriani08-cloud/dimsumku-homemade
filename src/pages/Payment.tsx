@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import CheckoutProgress from "@/components/checkout/CheckoutProgress";
 import { Loader2, QrCode, CheckCircle2, XCircle, Clock, MessageCircle } from "lucide-react";
+import qrisImage from "@/assets/qris-dimsumku.png";
 
 const WA_NUMBER = "6285711152590";
 
@@ -146,9 +147,13 @@ const Payment = () => {
                 </>
               ) : (
                 <>
-                  <div className="w-20 h-20 rounded-2xl bg-muted flex items-center justify-center mx-auto">
-                    <QrCode className="w-10 h-10 text-primary" />
-                  </div>
+                  {order.payment_method === "qris" ? (
+                    <img src={qrisImage} alt="QRIS Dimsumku" className="w-56 h-56 mx-auto rounded-xl border border-border shadow-sm" loading="lazy" width={512} height={640} />
+                  ) : (
+                    <div className="w-20 h-20 rounded-2xl bg-muted flex items-center justify-center mx-auto">
+                      <QrCode className="w-10 h-10 text-primary" />
+                    </div>
+                  )}
                   <h1 className="font-display text-2xl font-bold text-foreground">Menunggu Pembayaran</h1>
                   <p className="text-muted-foreground font-body text-sm">
                     Silakan selesaikan pembayaran untuk pesanan <span className="font-semibold text-foreground">{order.order_number}</span>
